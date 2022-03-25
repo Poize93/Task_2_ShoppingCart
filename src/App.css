@@ -1,0 +1,16 @@
+.NavBar {
+  margin-top: 50px;
+  background-color: whitesmoke;
+  display: flex;
+
+  align-items: center;
+}
+
+.banner {
+  background-color: black;
+  color: white;
+}
+
+.headline {
+  margin-top: 0px;
+}
