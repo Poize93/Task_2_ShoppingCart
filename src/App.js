@@ -20,14 +20,11 @@ function App() {
   };
 
   const handleView = () => {
-    var updt;
     if (AddCrt == 1) {
-      updt = AddCrt + 1;
-      setAdd(updt);
+      setAdd(2);
     }
     if (AddCrt == 2) {
-      updt = AddCrt - 1;
-      setAdd(updt);
+      setAdd(1);
     }
     console.log(AddCrt, 'Check out value');
   };
