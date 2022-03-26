@@ -1,29 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Rating from '@mui/material/Rating';
 import Button from '@mui/material/Button';
 import './Card.css';
 import Rating from '@mui/material/Rating';
 import { Context } from './Context';
 
-function Add() {
-  console.log('In add function');
-}
-
-function handleAdd(x) {
-  console.log('Add');
-  Add();
-}
-
-function handleView() {
-  console.log('View');
-}
-
-export default function Crd(props) {
+function Crd(props) {
   const [value, setValue] = React.useState(2);
   const [btnNm, setBtnName] = React.useState(props.view);
+  // const [action, setAction] = React.useState(props.action);
+  // const action = 2;
   const getValuesFromProvider = useContext(Context);
-  var action = props.action;
-  console.log(btnNm, 'checking Button name');
+  var action = getValuesFromProvider.handleButtonFromProvider;
+
+  function handleButton(action) {
+    if (action != 0) {
+      action == 1
+        ? getValuesFromProvider.handleIncrementFromProvider()
+        : getValuesFromProvider.handleDecrementFromProvider();
+    }
+  }
 
   return (
     <>
@@ -43,29 +39,33 @@ export default function Crd(props) {
             </span>
             <h5>{props.cost}</h5>
             <Button
-              onClick={(btnNm) => {
-                {
-                  action == 1
-                    ? getValuesFromProvider.handleIncrementFromProvider()
-                    : handleView();
-                }
+              className="btnDsply"
+              onClick={() => {
+                handleButton(action);
               }}
               variant="outlined"
             >
               {btnNm}
             </Button>
             <button
-              onClick={() => {
-                getValuesFromProvider.handleIncrementFromProvider;
-              }}
+              onClick={() =>
+                getValuesFromProvider.handleIncrementFromProvider()
+              }
             >
               Increment
             </button>{' '}
-            &nbsp;
-            {/* <button>Decerement</button> &nbsp; */}
+            <button
+              onClick={() =>
+                getValuesFromProvider.handleDecrementFromProvider()
+              }
+            >
+              Decrement
+            </button>{' '}
           </div>
         </div>
       </div>
     </>
   );
 }
+
+export default Crd;

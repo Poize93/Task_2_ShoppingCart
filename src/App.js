@@ -9,6 +9,8 @@ import { Context } from './Context';
 
 function App() {
   const [cartValue, setCart] = useState(0);
+  const [AddCrt, setAdd] = useState(1);
+
   const handleIncrement = () => {
     setCart(cartValue + 1);
   };
@@ -16,9 +18,26 @@ function App() {
   const handleDecrement = () => {
     setCart(cartValue - 1);
   };
+
+  const handleView = () => {
+    var updt;
+    if (AddCrt == 1) {
+      updt = AddCrt + 1;
+      setAdd(updt);
+    }
+    if (AddCrt == 2) {
+      updt = AddCrt - 1;
+      setAdd(updt);
+    }
+    console.log(AddCrt, 'Check out value');
+  };
+
   return (
     <div className="App">
       <div className="NavBar">
+        <button onClick={() => handleIncrement()}>Increment</button> &nbsp;
+        <button onClick={handleDecrement}>Decerement</button> &nbsp;
+        <button onClick={() => handleView()}>ChangeCartName</button>&nbsp;
         <Grid container direction="row">
           <Grid
             container
@@ -47,7 +66,6 @@ function App() {
             </div>
           </Grid>
           <Grid item xs={6}></Grid>
-
           <Grid item xs={2}>
             <Button variant="outlined">
               <ShoppingCartIcon />
@@ -74,55 +92,66 @@ function App() {
           </Grid>
         </Grid>
       </div>
-      <Grid container direction="row">
-        <Card
-          name="Fancy Product"
-          cost="$40.00 - $80.00"
-          view="View Option"
-          action="0"
-        />
-        <Card
-          name="Special Item"
-          cost="$20.00 $18.00"
-          view="Add to Cart"
-          action="1"
-        />
-        <Card
-          name="Sale Item"
-          cost="$$50.00 $25.00"
-          view="Add to Cart"
-          action="1"
-        />
-        <Card name="Popular Item" cost="$40.00" view="Add to Cart" action="1" />
-        <Card
-          name="Sale Item"
-          cost="$50.00 $25.00"
-          view="Add to Cart"
-          action="1"
-        />
-        <Card
-          name="Fancy Product"
-          cost="$120.00 - $280.00"
-          view="View Option"
-          action="0"
-        />
-        <Card
-          name="Special Item"
-          cost="$20.00 $18.00"
-          view="Add to Cart"
-          action="1"
-        />
-        <Card name="Popular Item" cost="$40.00" view="Add to Cart" action="1" />
-      </Grid>
-      <button onClick={() => handleIncrement()}>Increment</button> &nbsp;
-      <button onClick={handleDecrement}>Decerement</button> &nbsp;
+
       <Context.Provider
-        cartValue={{
+        value={{
           handleIncrementFromProvider: handleIncrement,
           handleDecrementFromProvider: handleDecrement,
+          handleButtonFromProvider: handleView,
         }}
       >
-        <Card />
+        <Grid container direction="row">
+          <Card
+            name="Fancy Product"
+            cost="$40.00 - $80.00"
+            view="View Option"
+            action="0"
+          />
+          <Card
+            name="Special Item"
+            cost="$20.00 $18.00"
+            view="Add to Cart"
+            action={AddCrt}
+          />
+          <Card
+            name="Sale Item"
+            cost="$$50.00 $25.00"
+            view="Add to Cart"
+            action={AddCrt}
+          />
+          <Card
+            name="Popular Item"
+            cost="$40.00"
+            view="Add to Cart"
+            action={AddCrt}
+          />
+          <Card
+            name="Sale Item"
+            cost="$50.00 $25.00"
+            view="Add to Cart"
+            action={AddCrt}
+          />
+          <Card
+            name="Fancy Product"
+            cost="$120.00 - $280.00"
+            view="View Option"
+            action="0"
+          />
+          <Card
+            name="Special Item"
+            cost="$20.00 $18.00"
+            view="Add to Cart"
+            action={AddCrt}
+          />
+          <Card
+            name="Popular Item"
+            cost="$40.00"
+            view="Add to Cart"
+            action={AddCrt}
+          />
+        </Grid>
+
+        {/* card ko Context.Provider m hi render karna hai */}
       </Context.Provider>
     </div>
   );
