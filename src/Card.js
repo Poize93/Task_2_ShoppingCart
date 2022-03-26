@@ -19,6 +19,14 @@ function Crd(props) {
         ? getValuesFromProvider.handleIncrementFromProvider()
         : getValuesFromProvider.handleDecrementFromProvider();
     }
+
+    if (action === 1) {
+      action = 2;
+    } else if (action === 2) {
+      action = 1;
+    }
+    console.log(action, 'Check Action');
+    getValuesFromProvider.handleButtonFromProvider(action);
   }
 
   return (
@@ -26,7 +34,6 @@ function Crd(props) {
       <div className="card">
         <div>
           <div>
-            <p className="sale">Sale</p>
             <img
               className="image"
               src="https://img.freepik.com/free-photo/girl-holds-fashion-shopping-bag-beauty_1150-13673.jpg?size=626&ext=jpg"
@@ -41,13 +48,15 @@ function Crd(props) {
             <Button
               className="btnDsply"
               onClick={() => {
-                handleButton(action);
+                if (props.action != 0) {
+                  handleButton(props.action);
+                }
               }}
               variant="outlined"
             >
               {btnNm}
             </Button>
-            <button
+            {/* <button
               onClick={() =>
                 getValuesFromProvider.handleIncrementFromProvider()
               }
@@ -60,7 +69,7 @@ function Crd(props) {
               }
             >
               Decrement
-            </button>{' '}
+            </button>{' '} */}
           </div>
         </div>
       </div>

@@ -19,22 +19,17 @@ function App() {
     setCart(cartValue - 1);
   };
 
-  const handleView = () => {
-    if (AddCrt == 1) {
-      setAdd(2);
-    }
-    if (AddCrt == 2) {
-      setAdd(1);
-    }
-    console.log(AddCrt, 'Check out value');
+  const handleView = (x) => {
+    setAdd(x);
+    console.log('Check view', x);
   };
 
   return (
     <div className="App">
       <div className="NavBar">
-        <button onClick={() => handleIncrement()}>Increment</button> &nbsp;
+        {/* <button onClick={() => handleIncrement()}>Increment</button> &nbsp;
         <button onClick={handleDecrement}>Decerement</button> &nbsp;
-        <button onClick={() => handleView()}>ChangeCartName</button>&nbsp;
+        <button onClick={() => handleView()}>ChangeCartName</button>&nbsp; */}
         <Grid container direction="row">
           <Grid
             container
