@@ -42,7 +42,6 @@ export default function Crd(props) {
               <Rating name="read-only" value={value} readOnly />
             </span>
             <h5>{props.cost}</h5>
-
             <Button
               onClick={(btnNm) => {
                 {
@@ -55,6 +54,15 @@ export default function Crd(props) {
             >
               {btnNm}
             </Button>
+            <button
+              onClick={() => {
+                getValuesFromProvider.handleIncrementFromProvider;
+              }}
+            >
+              Increment
+            </button>{' '}
+            &nbsp;
+            {/* <button>Decerement</button> &nbsp; */}
           </div>
         </div>
       </div>

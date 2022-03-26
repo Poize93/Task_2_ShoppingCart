@@ -117,7 +117,7 @@ function App() {
       <button onClick={() => handleIncrement()}>Increment</button> &nbsp;
       <button onClick={handleDecrement}>Decerement</button> &nbsp;
       <Context.Provider
-        value={{
+        cartValue={{
           handleIncrementFromProvider: handleIncrement,
           handleDecrementFromProvider: handleDecrement,
         }}
