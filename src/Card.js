@@ -6,14 +6,14 @@ import Rating from '@mui/material/Rating';
 import { Context } from './Context';
 
 function Crd(props) {
-  const [value, setValue] = React.useState(2);
-  const [btnNm, setBtnName] = React.useState(props.view);
-  // const [action, setAction] = React.useState(props.action);
-  // const action = 2;
+  // var key = props.key;
+  const [value, setValue] = useState(4);
+  const [btnNm, setBtnName] = useState(props.view);
+
   const getValuesFromProvider = useContext(Context);
   var action = getValuesFromProvider.handleButtonFromProvider;
 
-  function handleButton(action) {
+  function handleButton(action, key) {
     if (action != 0) {
       action == 1
         ? getValuesFromProvider.handleIncrementFromProvider()
@@ -28,7 +28,7 @@ function Crd(props) {
     console.log(action, 'Check Action');
     getValuesFromProvider.handleButtonFromProvider(action);
   }
-
+  // console.log(props.action, 'checking my props funtionality');
   return (
     <>
       <div className="card">
@@ -43,14 +43,12 @@ function Crd(props) {
             <h3>{props.name}</h3>
             {props.star == true ? (
               <span>
-                <Rating name="read-only" value={value} readOnly />
+                <Rating name="read-only" value={5} readOnly />
               </span>
             ) : (
               <></>
             )}
-            {/* <span>
-              <Rating name="read-only" value={value} readOnly />
-            </span> */}
+
             <h5>{props.cost}</h5>
             <Button
               className="btnDsply"
@@ -63,20 +61,6 @@ function Crd(props) {
             >
               {btnNm}
             </Button>
-            {/* <button
-              onClick={() =>
-                getValuesFromProvider.handleIncrementFromProvider()
-              }
-            >
-              Increment
-            </button>{' '}
-            <button
-              onClick={() =>
-                getValuesFromProvider.handleDecrementFromProvider()
-              }
-            >
-              Decrement
-            </button>{' '} */}
           </div>
         </div>
       </div>

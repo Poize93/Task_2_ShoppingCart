@@ -99,6 +99,7 @@ function App() {
             view="View Option"
             action="0"
             star={false}
+            key="1"
           />
           <Card
             name="Special Item"
@@ -106,6 +107,7 @@ function App() {
             view="Add to Cart"
             action={AddCrt}
             star={true}
+            key="2"
           />
           <Card
             name="Sale Item"
@@ -113,6 +115,7 @@ function App() {
             view="Add to Cart"
             action={AddCrt}
             star={false}
+            key="3"
           />
           <Card
             name="Popular Item"
@@ -120,6 +123,7 @@ function App() {
             view="Add to Cart"
             action={AddCrt}
             star={true}
+            key="4"
           />
           <Card
             name="Sale Item"
@@ -127,6 +131,7 @@ function App() {
             view="Add to Cart"
             action={AddCrt}
             star={false}
+            key="5"
           />
           <Card
             name="Fancy Product"
@@ -134,6 +139,7 @@ function App() {
             view="View Option"
             action="0"
             star={false}
+            key="6"
           />
           <Card
             name="Special Item"
@@ -141,6 +147,7 @@ function App() {
             view="Add to Cart"
             action={AddCrt}
             star={true}
+            key="7"
           />
           <Card
             name="Popular Item"
@@ -148,6 +155,7 @@ function App() {
             view="Add to Cart"
             action={AddCrt}
             star={true}
+            key="8"
           />
         </Grid>
 
