@@ -144,7 +144,7 @@ function App() {
           <Card
             name="Special Item"
             cost="$20.00 $18.00"
-            view="Add to Cart"
+            view="Add to Cart"    
             action={AddCrt}
             star={true}
             key="7"
