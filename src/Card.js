@@ -54,7 +54,7 @@ function Crd(props) {
               className="btnDsply"
               onClick={() => {
                 if (props.action != 0) {
-                  handleButton(props.action);
+                  handleButton(props.action); ////here is the issue
                 }
               }}
               variant="outlined"
