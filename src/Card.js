@@ -13,7 +13,10 @@ function Crd(props) {
   const getValuesFromProvider = useContext(Context);
   var action = getValuesFromProvider.handleButtonFromProvider;
 
-  function handleButton(action, key) {
+  function handleButton(action) {
+    {
+      getValuesFromProvider.handleCartNameFromProvider(props.view);
+    }
     if (action != 0) {
       action == 1
         ? getValuesFromProvider.handleIncrementFromProvider()

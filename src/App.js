@@ -10,6 +10,7 @@ import { Context } from './Context';
 function App() {
   const [cartValue, setCart] = useState(0);
   const [AddCrt, setAdd] = useState(1);
+  const [cartName, setName] = useState('Add to Cart');
 
   const handleIncrement = () => {
     setCart(cartValue + 1);
@@ -24,6 +25,14 @@ function App() {
     console.log('Check view', x);
   };
 
+  const handleCartName = (x) => {
+    if (x == 'Add to Cart') {
+      setName('Remove Item');
+    } else if (x == 'Remove Item') {
+      setName('Add to Cart');
+    }
+    console.log(cartName, 'Checking my cart name');
+  };
   return (
     <div className="App">
       <div className="NavBar">
@@ -90,6 +99,7 @@ function App() {
           handleIncrementFromProvider: handleIncrement,
           handleDecrementFromProvider: handleDecrement,
           handleButtonFromProvider: handleView,
+          handleCartNameFromProvider: handleCartName,
         }}
       >
         <Grid container direction="row">
@@ -99,39 +109,34 @@ function App() {
             view="View Option"
             action="0"
             star={false}
-            key="1"
           />
           <Card
             name="Special Item"
             cost="$20.00 $18.00"
-            view="Add to Cart"
+            view={cartName}
             action={AddCrt}
             star={true}
-            key="2"
           />
           <Card
             name="Sale Item"
             cost="$$50.00 $25.00"
-            view="Add to Cart"
+            view={cartName}
             action={AddCrt}
             star={false}
-            key="3"
           />
           <Card
             name="Popular Item"
             cost="$40.00"
-            view="Add to Cart"
+            view={cartName}
             action={AddCrt}
             star={true}
-            key="4"
           />
           <Card
             name="Sale Item"
             cost="$50.00 $25.00"
-            view="Add to Cart"
+            view={cartName}
             action={AddCrt}
             star={false}
-            key="5"
           />
           <Card
             name="Fancy Product"
@@ -139,23 +144,20 @@ function App() {
             view="View Option"
             action="0"
             star={false}
-            key="6"
           />
           <Card
             name="Special Item"
             cost="$20.00 $18.00"
-            view="Add to Cart"    
+            view={cartName}
             action={AddCrt}
             star={true}
-            key="7"
           />
           <Card
             name="Popular Item"
             cost="$40.00"
-            view="Add to Cart"
+            view={cartName}
             action={AddCrt}
             star={true}
-            key="8"
           />
         </Grid>
 
