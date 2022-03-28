@@ -28,8 +28,10 @@ function App() {
   const handleCartName = (x) => {
     if (x == 'Add to Cart') {
       setName('Remove Item');
+      console.log('In Add Cart Function');
     } else if (x == 'Remove Item') {
       setName('Add to Cart');
+      console.log('In Remove Cart Function');
     }
     console.log(cartName, 'Checking my cart name');
   };
