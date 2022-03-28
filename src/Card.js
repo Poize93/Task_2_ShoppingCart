@@ -13,10 +13,12 @@ function Crd(props) {
   const getValuesFromProvider = useContext(Context);
   var action = getValuesFromProvider.handleButtonFromProvider;
 
-  function handleButton(action) {
+  function handleButton(action, unique_Key) {
+    console.log(unique_Key, 'Checking Unique Key');
     {
       getValuesFromProvider.handleCartNameFromProvider(props.view);
     }
+
     if (action != 0) {
       action == 1
         ? getValuesFromProvider.handleIncrementFromProvider()
@@ -57,13 +59,14 @@ function Crd(props) {
               className="btnDsply"
               onClick={() => {
                 if (props.action != 0) {
-                  handleButton(props.action); ////here is the issue
+                  handleButton(props.action, props.unique_Key); ////here is the issue
                 }
               }}
               variant="outlined"
             >
-              {btnNm}
+              {props.view}
             </Button>
+            
           </div>
         </div>
       </div>

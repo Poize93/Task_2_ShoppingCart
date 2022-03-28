@@ -28,12 +28,11 @@ function App() {
   const handleCartName = (x) => {
     if (x == 'Add to Cart') {
       setName('Remove Item');
-      console.log('In Add Cart Function');
+      // console.log(x, 'In Add Cart Function');
     } else if (x == 'Remove Item') {
       setName('Add to Cart');
-      console.log('In Remove Cart Function');
+      // console.log(x, 'In Remove Cart Function');
     }
-    console.log(cartName, 'Checking my cart name');
   };
   return (
     <div className="App">
@@ -111,6 +110,7 @@ function App() {
             view="View Option"
             action="0"
             star={false}
+            unique_Key="1"
           />
           <Card
             name="Special Item"
@@ -118,6 +118,7 @@ function App() {
             view={cartName}
             action={AddCrt}
             star={true}
+            unique_Key="2"
           />
           <Card
             name="Sale Item"
@@ -125,6 +126,7 @@ function App() {
             view={cartName}
             action={AddCrt}
             star={false}
+            unique_Key="3"
           />
           <Card
             name="Popular Item"
@@ -132,6 +134,7 @@ function App() {
             view={cartName}
             action={AddCrt}
             star={true}
+            unique_Key="4"
           />
           <Card
             name="Sale Item"
@@ -139,6 +142,7 @@ function App() {
             view={cartName}
             action={AddCrt}
             star={false}
+            unique_Key="5"
           />
           <Card
             name="Fancy Product"
@@ -146,6 +150,7 @@ function App() {
             view="View Option"
             action="0"
             star={false}
+            unique_Key="6"
           />
           <Card
             name="Special Item"
@@ -153,6 +158,7 @@ function App() {
             view={cartName}
             action={AddCrt}
             star={true}
+            unique_Key="7"
           />
           <Card
             name="Popular Item"
@@ -160,6 +166,7 @@ function App() {
             view={cartName}
             action={AddCrt}
             star={true}
+            unique_Key="8"
           />
         </Grid>
 
