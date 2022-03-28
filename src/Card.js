@@ -66,7 +66,6 @@ function Crd(props) {
             >
               {props.view}
             </Button>
-            
           </div>
         </div>
       </div>
