@@ -41,9 +41,16 @@ function Crd(props) {
           </div>
           <div className="content">
             <h3>{props.name}</h3>
-            <span>
+            {props.star == true ? (
+              <span>
+                <Rating name="read-only" value={value} readOnly />
+              </span>
+            ) : (
+              <></>
+            )}
+            {/* <span>
               <Rating name="read-only" value={value} readOnly />
-            </span>
+            </span> */}
             <h5>{props.cost}</h5>
             <Button
               className="btnDsply"

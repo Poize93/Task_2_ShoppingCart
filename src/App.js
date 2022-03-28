@@ -98,48 +98,56 @@ function App() {
             cost="$40.00 - $80.00"
             view="View Option"
             action="0"
+            star={false}
           />
           <Card
             name="Special Item"
             cost="$20.00 $18.00"
             view="Add to Cart"
             action={AddCrt}
+            star={true}
           />
           <Card
             name="Sale Item"
             cost="$$50.00 $25.00"
             view="Add to Cart"
             action={AddCrt}
+            star={false}
           />
           <Card
             name="Popular Item"
             cost="$40.00"
             view="Add to Cart"
             action={AddCrt}
+            star={true}
           />
           <Card
             name="Sale Item"
             cost="$50.00 $25.00"
             view="Add to Cart"
             action={AddCrt}
+            star={false}
           />
           <Card
             name="Fancy Product"
             cost="$120.00 - $280.00"
             view="View Option"
             action="0"
+            star={false}
           />
           <Card
             name="Special Item"
             cost="$20.00 $18.00"
             view="Add to Cart"
             action={AddCrt}
+            star={true}
           />
           <Card
             name="Popular Item"
             cost="$40.00"
             view="Add to Cart"
             action={AddCrt}
+            star={true}
           />
         </Grid>
 
