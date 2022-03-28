@@ -30,7 +30,7 @@ function Crd(props) {
     } else if (action === 2) {
       action = 1;
     }
-    console.log(action, 'Check Action');
+    // console.log(action, 'Check Action');
     getValuesFromProvider.handleButtonFromProvider(action);
   }
   // console.log(props.action, 'checking my props funtionality');
