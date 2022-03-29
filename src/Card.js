@@ -15,9 +15,7 @@ function Crd(props) {
 
   function handleButton(action, unique_Key, e) {
     console.log(e.target.textContent, 'Checking Unique Key');
-    // {
-    //   getValuesFromProvider.handleCartNameFromProvider(props.view);
-    // }
+
     if (action != 0) {
       if (e.target.textContent === 'Add to Cart') {
         e.target.textContent = 'Remove from Cart';
@@ -27,12 +25,6 @@ function Crd(props) {
         getValuesFromProvider.handleDecrementFromProvider();
       }
     }
-
-    // if (action != 0) {
-    //   action == 1
-    //     ? getValuesFromProvider.handleIncrementFromProvider()
-    //     : getValuesFromProvider.handleDecrementFromProvider();
-    // }
 
     if (action === 1) {
       action = 2;

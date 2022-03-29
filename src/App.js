@@ -23,16 +23,8 @@ function App() {
 
   const handleView = (x) => {
     setAdd(x);
-    // console.log('Check view', x);
   };
 
-  // const handleCartName = (x) => {
-  //   if (x == 'Add to Cart') {
-  //     setName('Remove Item');
-  //   } else if (x == 'Remove Item') {
-  //     setName('Add to Cart');
-  //   }
-  // };
   return (
     <div className="App">
       <div className="NavBar">
@@ -96,7 +88,6 @@ function App() {
           handleIncrementFromProvider: handleIncrement,
           handleDecrementFromProvider: handleDecrement,
           handleButtonFromProvider: handleView,
-          //  handleCartNameFromProvider: handleCartName,
         }}
       >
         <Grid container direction="row">
