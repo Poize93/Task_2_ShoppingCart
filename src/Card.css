@@ -26,9 +26,7 @@
 }
 
 .sale {
-  background-color: red;
+  background-color: black;
   color: whitesmoke;
-  width: 35px;
-  border-radius: 20%;
-  margin-top: 00%;
+  height: 30px;
 }

@@ -38,6 +38,7 @@ function Crd(props) {
   return (
     <>
       <div className="card">
+        <span className="sale">Sale</span>
         <div>
           <div>
             <img
