@@ -14,3 +14,9 @@
 .headline {
   margin-top: 0px;
 }
+
+.margin {
+  background-color: brown;
+  height: 5px;
+  margin-bottom: 0px;
+}

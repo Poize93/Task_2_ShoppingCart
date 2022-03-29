@@ -56,6 +56,7 @@ function App() {
             </div>
           </Grid>
           <Grid item xs={6}></Grid>
+
           <Grid item xs={2}>
             <Button variant="outlined">
               <ShoppingCartIcon />
@@ -98,6 +99,7 @@ function App() {
             action="0"
             star={false}
             unique_Key="1"
+            sale={false}
           />
           <Card
             name="Special Item"
@@ -106,6 +108,7 @@ function App() {
             action={AddCrt}
             star={true}
             unique_Key="2"
+            sale={true}
           />
           <Card
             name="Sale Item"
@@ -114,6 +117,7 @@ function App() {
             action={AddCrt}
             star={false}
             unique_Key="3"
+            sale={true}
           />
           <Card
             name="Popular Item"
@@ -122,6 +126,7 @@ function App() {
             action={AddCrt}
             star={true}
             unique_Key="4"
+            sale={false}
           />
           <Card
             name="Sale Item"
@@ -130,6 +135,7 @@ function App() {
             action={AddCrt}
             star={false}
             unique_Key="5"
+            sale={true}
           />
           <Card
             name="Fancy Product"
@@ -138,6 +144,7 @@ function App() {
             action="0"
             star={false}
             unique_Key="6"
+            sale={false}
           />
           <Card
             name="Special Item"
@@ -146,6 +153,7 @@ function App() {
             action={AddCrt}
             star={true}
             unique_Key="7"
+            sale={true}
           />
           <Card
             name="Popular Item"
@@ -154,6 +162,7 @@ function App() {
             action={AddCrt}
             star={true}
             unique_Key="8"
+            sale={false}
           />
         </Grid>
 

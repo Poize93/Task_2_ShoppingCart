@@ -28,5 +28,9 @@
 .sale {
   background-color: black;
   color: whitesmoke;
-  height: 30px;
+
+  position: relative;
+  top: 22px;
+  left: 220px;
+  border-radius: 20%;
 }

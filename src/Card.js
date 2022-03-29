@@ -38,8 +38,9 @@ function Crd(props) {
   return (
     <>
       <div className="card">
-        <span className="sale">Sale</span>
         <div>
+          {props.sale == true ? <span className="sale">Sale</span> : <></>}
+
           <div>
             <img
               className="image"
