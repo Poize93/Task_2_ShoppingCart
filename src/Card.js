@@ -13,17 +13,26 @@ function Crd(props) {
   const getValuesFromProvider = useContext(Context);
   var action = getValuesFromProvider.handleButtonFromProvider;
 
-  function handleButton(action, unique_Key) {
-    console.log(unique_Key, 'Checking Unique Key');
-    {
-      getValuesFromProvider.handleCartNameFromProvider(props.view);
+  function handleButton(action, unique_Key, e) {
+    console.log(e.target.textContent, 'Checking Unique Key');
+    // {
+    //   getValuesFromProvider.handleCartNameFromProvider(props.view);
+    // }
+    if (action != 0) {
+      if (e.target.textContent === 'Add to Cart') {
+        e.target.textContent = 'Remove from Cart';
+        getValuesFromProvider.handleIncrementFromProvider();
+      } else {
+        e.target.textContent = 'Add to Cart';
+        getValuesFromProvider.handleDecrementFromProvider();
+      }
     }
 
-    if (action != 0) {
-      action == 1
-        ? getValuesFromProvider.handleIncrementFromProvider()
-        : getValuesFromProvider.handleDecrementFromProvider();
-    }
+    // if (action != 0) {
+    //   action == 1
+    //     ? getValuesFromProvider.handleIncrementFromProvider()
+    //     : getValuesFromProvider.handleDecrementFromProvider();
+    // }
 
     if (action === 1) {
       action = 2;
@@ -57,9 +66,9 @@ function Crd(props) {
             <h5>{props.cost}</h5>
             <Button
               className="btnDsply"
-              onClick={() => {
+              onClick={(e) => {
                 if (props.action != 0) {
-                  handleButton(props.action, props.unique_Key); ////here is the issue
+                  handleButton(props.action, props.unique_Key, e); ////here is the issue
                 }
               }}
               variant="outlined"
