@@ -14,7 +14,7 @@ function Crd(props) {
   var action = getValuesFromProvider.handleButtonFromProvider;
 
   function handleButton(action, unique_Key, e) {
-    console.log(e.target.textContent, 'Checking Unique Key');
+    console.log(e, 'Checking Unique Key');
 
     if (action != 0) {
       if (e.target.textContent === 'Add to Cart') {
