@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Rating from '@mui/material/Rating';
 import Button from '@mui/material/Button';
 import './Card.css';
-import Rating from '@mui/material/Rating';
+
 import { Context } from './Context';
 
 function Crd(props) {
@@ -68,7 +68,7 @@ function Crd(props) {
               {props.cost2}
             </h5>
             <Button
-             className="alignment"
+              className="alignment"
               onClick={(e) => {
                 if (props.action != 0) {
                   handleButton(props.action, props.unique_Key, e); ////here is the issue
