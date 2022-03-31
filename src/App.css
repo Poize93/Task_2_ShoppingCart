@@ -20,3 +20,17 @@
   height: 5px;
   margin-bottom: 0px;
 }
+
+.cart {
+  display: flex;
+  direction: row;
+  height: 100%;
+}
+
+.shop {
+  margin-bottom: 0px;
+}
+
+.headline {
+  margin-top: 5px;
+}

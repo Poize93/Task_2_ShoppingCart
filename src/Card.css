@@ -13,7 +13,6 @@
   height: 170px;
   background-position: center;
   background-size: cover;
-  position: static;
 }
 
 .content {
@@ -33,4 +32,8 @@
   top: 22px;
   left: 220px;
   border-radius: 20%;
+}
+
+.old_Cost {
+  color: grey;
 }

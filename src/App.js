@@ -1,12 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
 import Button from '@mui/material/Button';
 import Card from './Card';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Context } from './Context';
+import Divider from '@mui/material/Divider';
 
 function App() {
   const [cartValue, setCart] = useState(0);
@@ -24,7 +29,10 @@ function App() {
   const handleView = (x) => {
     setAdd(x);
   };
-
+  const [age, setAge] = React.useState('');
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   return (
     <div className="App">
       <div className="NavBar">
@@ -52,16 +60,34 @@ function App() {
               </Grid>
             </div>
             <div>
-              <Grid item>Shop</Grid>
+              <Box sx={{ minWidth: 120 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Shop</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={age}
+                    label="Shop"
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={1}>All Products</MenuItem>
+                    <Divider variant="middle" />
+                    <MenuItem value={2}>Popular Items </MenuItem>
+                    <MenuItem value={3}>New Arrival</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
             </div>
           </Grid>
           <Grid item xs={6}></Grid>
 
           <Grid item xs={2}>
-            <Button variant="outlined">
-              <ShoppingCartIcon />
-              Cart {cartValue}
-            </Button>{' '}
+            <div className="cart">
+              <Button variant="outlined">
+                <ShoppingCartIcon />
+                Cart {cartValue}
+              </Button>
+            </div>
           </Grid>
         </Grid>
       </div>
@@ -74,12 +100,10 @@ function App() {
           alignItems="center"
         >
           <Grid item>
-            <h1>Shop in Style</h1>
+            <h1 className="shop">Shop in Style</h1>
           </Grid>
           <Grid item>
-            <div className="headline">
-              <h5>With this Shop Homapage Tempelete</h5>
-            </div>
+            <h5 className="headline">With this Shop Homapage Tempelete</h5>
           </Grid>
         </Grid>
       </div>
@@ -94,7 +118,8 @@ function App() {
         <Grid container direction="row">
           <Card
             name="Fancy Product"
-            cost="$40.00 - $80.00"
+            cost1=""
+            cost2="$40.00 - $80.00"
             view="View Option"
             action="0"
             star={false}
@@ -103,7 +128,8 @@ function App() {
           />
           <Card
             name="Special Item"
-            cost="$20.00 $18.00"
+            cost1="$20.00"
+            cost2="$18.00"
             view={cartName}
             action={AddCrt}
             star={true}
@@ -112,7 +138,8 @@ function App() {
           />
           <Card
             name="Sale Item"
-            cost="$$50.00 $25.00"
+            cost1="$50.00"
+            cost2="$25.00"
             view={cartName}
             action={AddCrt}
             star={false}
@@ -121,7 +148,8 @@ function App() {
           />
           <Card
             name="Popular Item"
-            cost="$40.00"
+            cost1=""
+            cost2="$40.00"
             view={cartName}
             action={AddCrt}
             star={true}
@@ -130,7 +158,8 @@ function App() {
           />
           <Card
             name="Sale Item"
-            cost="$50.00 $25.00"
+            cost1="$50.00"
+            cost2="$25.00"
             view={cartName}
             action={AddCrt}
             star={false}
@@ -139,7 +168,8 @@ function App() {
           />
           <Card
             name="Fancy Product"
-            cost="$120.00 - $280.00"
+            cost1=""
+            cost2="$120.00 - $280.00"
             view="View Option"
             action="0"
             star={false}
@@ -148,7 +178,8 @@ function App() {
           />
           <Card
             name="Special Item"
-            cost="$20.00 $18.00"
+            cost1="$20.00"
+            cost2="$18.00"
             view={cartName}
             action={AddCrt}
             star={true}
@@ -157,7 +188,8 @@ function App() {
           />
           <Card
             name="Popular Item"
-            cost="$40.00"
+            cost1=""
+            cost2="$40.00"
             view={cartName}
             action={AddCrt}
             star={true}

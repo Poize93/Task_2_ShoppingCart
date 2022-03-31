@@ -57,7 +57,13 @@ function Crd(props) {
               <></>
             )}
 
-            <h5>{props.cost}</h5>
+            <h5>
+              <span className="old_Cost" style={{ textDecorationLine: 'line-through' }}>
+                {props.cost1}
+              </span>{' '}
+              &nbsp;
+              {props.cost2}
+            </h5>
             <Button
               className="btnDsply"
               onClick={(e) => {
