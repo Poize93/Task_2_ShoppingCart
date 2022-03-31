@@ -48,24 +48,27 @@ function Crd(props) {
             />
           </div>
           <div className="content">
-            <h3>{props.name}</h3>
+            <h3 className="alignment">{props.name}</h3>
             {props.star == true ? (
-              <span>
+              <span className="alignment">
                 <Rating name="read-only" value={5} readOnly />
               </span>
             ) : (
               <></>
             )}
 
-            <h5>
-              <span className="old_Cost" style={{ textDecorationLine: 'line-through' }}>
+            <h5 className="alignment">
+              <span
+                className="old_Cost"
+                style={{ textDecorationLine: 'line-through' }}
+              >
                 {props.cost1}
               </span>{' '}
               &nbsp;
               {props.cost2}
             </h5>
             <Button
-              className="btnDsply"
+             className="alignment"
               onClick={(e) => {
                 if (props.action != 0) {
                   handleButton(props.action, props.unique_Key, e); ////here is the issue
